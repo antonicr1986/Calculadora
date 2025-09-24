@@ -7,9 +7,12 @@
     Private calc As New Calculator()
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBoxResultado.Text = "0"
+        LimpiarResultado()
     End Sub
 
+    Private Sub LimpiarResultado()
+        TextBoxResultado.Text = "0"
+    End Sub
 
 
 #Region "Métodos/operaciones de la calculadora"
@@ -20,7 +23,6 @@
         nuevaEntrada = True
 
         TextBoxValorAnterior.Text = valorAnterior.ToString() & " " & operadorActual
-
 
     End Sub
 
@@ -65,8 +67,6 @@
             TextBoxResultado.Text &= boton.Text
         End If
 
-
-
     End Sub
 
     Private Sub ButtonCambioSigno_Click(sender As Object, e As EventArgs) Handles ButtonCambioSigno.Click
@@ -97,7 +97,7 @@
 #Region "Gestión de teclas relacionadas con el borrado"
 
     Private Sub ButtonC_Click(sender As Object, e As EventArgs) Handles ButtonC.Click
-        TextBoxResultado.Text = "0"
+
 
         'Aquí también reseteare otras variables en el futuro
         TextBoxValorAnterior.Text = ""
@@ -105,9 +105,9 @@
     End Sub
 
     Private Sub ButtonCE_Click(sender As Object, e As EventArgs) Handles ButtonCE.Click
-        TextBoxResultado.Text = "0"
+        LimpiarResultado()
 
-        nuevaEntrada = True 'CambioRevisar
+        nuevaEntrada = True 'LChanges
     End Sub
 
     Private Sub ButtonBorrar1_Click(sender As Object, e As EventArgs) Handles ButtonBorrar1.Click
@@ -116,14 +116,11 @@
         If textoActual.Length > 1 Then
             TextBoxResultado.Text = textoActual.Substring(0, textoActual.Length - 1)
         Else
-            TextBoxResultado.Text = "0"
+            LimpiarResultado()
         End If
 
     End Sub
 
-
-
 #End Region
-
 
 End Class
