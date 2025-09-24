@@ -18,6 +18,10 @@
         valorAnterior = CDbl(TextBoxResultado.Text)
         operadorActual = CType(sender, Button).Text
         nuevaEntrada = True
+
+        TextBoxValorAnterior.Text = valorAnterior.ToString() & " " & operadorActual
+
+
     End Sub
 
     Private Sub ButtonIgual_Click(sender As Object, e As EventArgs) Handles ButtonIgual.Click
@@ -27,17 +31,13 @@
 
             Select Case operadorActual
                 Case "+"
-                    resultado = valorAnterior + valorActual
+                    resultado = calc.Sumar(valorAnterior, valorActual)
                 Case "-"
-                    resultado = valorAnterior - valorActual
-                Case "×", "*"
-                    resultado = valorAnterior * valorActual
-                Case "÷", "/"
-                    If valorActual = 0 Then
-                        MessageBox.Show("No se puede dividir entre cero.")
-                        Exit Sub
-                    End If
-                    resultado = valorAnterior / valorActual
+                    resultado = calc.Restar(valorAnterior, valorActual)
+                Case "X"
+                    resultado = calc.Multiplicar(valorAnterior, valorActual)
+                Case "/"
+                    resultado = calc.Dividir(valorAnterior, valorActual)
                 Case Else
                     resultado = valorActual
             End Select
@@ -50,22 +50,6 @@
         End Try
     End Sub
 
-
-    Private Sub ButtonSumar_Click(sender As Object, e As EventArgs) Handles ButtonSumar.Click
-
-    End Sub
-
-    Private Sub ButtonRestar_Click(sender As Object, e As EventArgs) Handles ButtonRestar.Click
-
-    End Sub
-
-    Private Sub ButtonMultiplicar_Click(sender As Object, e As EventArgs) Handles ButtonMultiplicar.Click
-
-    End Sub
-
-    Private Sub ButtonDividir_Click(sender As Object, e As EventArgs) Handles ButtonDividir.Click
-
-    End Sub
 #End Region
 
 
@@ -73,12 +57,15 @@
     Private Sub BtnNumero_Click(sender As Object, e As EventArgs) Handles Button0.Click, Button1.Click, Button2.Click, Button3.Click, Button4.Click, Button5.Click, Button6.Click, Button7.Click, Button8.Click, Button9.Click
         Dim boton As Button = CType(sender, Button)
 
-        ' Si el resultado actual es "0", lo reemplazamos
-        If TextBoxResultado.Text = "0" Then
+        ' Si es una nueva entrada, limpiamos el campo
+        If nuevaEntrada Or TextBoxResultado.Text = "0" Then
             TextBoxResultado.Text = boton.Text
+            nuevaEntrada = False
         Else
             TextBoxResultado.Text &= boton.Text
         End If
+
+
 
     End Sub
 
@@ -113,10 +100,14 @@
         TextBoxResultado.Text = "0"
 
         'Aquí también reseteare otras variables en el futuro
+        TextBoxValorAnterior.Text = ""
+        valorAnterior = 0
     End Sub
 
     Private Sub ButtonCE_Click(sender As Object, e As EventArgs) Handles ButtonCE.Click
         TextBoxResultado.Text = "0"
+
+        nuevaEntrada = True 'CambioRevisar
     End Sub
 
     Private Sub ButtonBorrar1_Click(sender As Object, e As EventArgs) Handles ButtonBorrar1.Click
