@@ -1,0 +1,12 @@
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.vbproj.AssemblyReference.cache
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.Calculadora.resources
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.Resources.resources
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.vbproj.GenerateResource.cache
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.vbproj.CoreCompileInputs.cache
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\bin\Debug\Aplicacion.exe.config
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\bin\Debug\Aplicacion.exe
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\bin\Debug\Aplicacion.pdb
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\bin\Debug\Aplicacion.xml
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.exe
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.xml
+C:\Users\anton\source\repos\Aplicacion\Aplicacion\obj\Debug\Aplicacion.pdb
